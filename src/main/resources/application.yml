@@ -4,14 +4,14 @@ spring:
       name: assets-api
   redis:
     database: ${REDIS_DATABASE_INDEX:0}
-    host: ${REDIS_HOST:localhost}
+    host: ${REDIS_HOST:172.19.255.201}
     port: ${REDIS_PORT:6379}
     timeout: ${REDIS_TIMEOUT:60000}
   cache:
     redis:
       time-to-live: ${CACHE_EXPIRATION:60000}
-  lifecycle:
-    timeout-per-shutdown-phase: 30s
+#  lifecycle:
+#    timeout-per-shutdown-phase: 30s
 info:
   app:
     name: spring-boot-k8s-demo
@@ -28,7 +28,7 @@ management:
     probes:
       enabled: true
 server:
-  shutdown: graceful
+#  shutdown: graceful
   servlet:
     context-path: /api
 feign.compression:

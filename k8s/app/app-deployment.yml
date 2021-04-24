@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: assets-app
+  namespace: dev
+  labels:
+    app: assets-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: assets-app
+  template:
+    metadata:
+      labels:
+        app: assets-app
+    spec:
+      containers:
+        - name: assets-app
+          image: eltonmmoreira/assets:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+              name: http
+          envFrom:
+            - configMapRef:
+                name: assets-app
+          livenessProbe:
+            httpGet:
+              path: /app/actuator/health/liveness
+              port: 8080
+            initialDelaySeconds: 30
+          readinessProbe:
+            httpGet:
+              path: /app/actuator/health/readiness
+              port: 8080
+            initialDelaySeconds: 30
+          resources:
+            requests:
+              memory: "512Mi"
+              cpu: "0.5"
+            limits:
+              memory: "1024Mi"
+              cpu: "1"

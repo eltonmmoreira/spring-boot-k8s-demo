@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: assets-app
+  namespace: dev
+data:
+  REDIS_DATABASE_INDEX: "0"
+  REDIS_HOST: "redis"
+  REDIS_PORT: "6379"
+  REDIS_TIMEOUT: "60000"
+  CACHE_EXPIRATION: "60000"
