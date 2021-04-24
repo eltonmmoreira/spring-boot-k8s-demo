@@ -7,7 +7,7 @@ spec:
   rules:
     - http:
         paths:
-          - path: /app
+          - path: /api
             backend:
               serviceName: assets-app
               servicePort: 8080

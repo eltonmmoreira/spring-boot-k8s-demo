@@ -17,8 +17,8 @@ spec:
     spec:
       containers:
         - name: assets-app
-          image: eltonmmoreira/assets:latest
-          imagePullPolicy: Always
+          image: eltonmmoreira/assets:0.0.1-SNAPSHOT
+          imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080
               name: http
@@ -27,12 +27,12 @@ spec:
                 name: assets-app
           livenessProbe:
             httpGet:
-              path: /app/actuator/health/liveness
+              path: /api/actuator/health/liveness
               port: 8080
             initialDelaySeconds: 30
           readinessProbe:
             httpGet:
-              path: /app/actuator/health/readiness
+              path: /api/actuator/health/readiness
               port: 8080
             initialDelaySeconds: 30
           resources:
