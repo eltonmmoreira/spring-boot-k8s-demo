@@ -5,7 +5,7 @@ metadata:
   namespace: dev
 data:
   REDIS_DATABASE_INDEX: "0"
-  REDIS_HOST: "172.19.255.201"
+  REDIS_HOST: "redis.redis.svc.cluster.local"
   REDIS_PORT: "6379"
   REDIS_TIMEOUT: "60000"
   CACHE_EXPIRATION: "60000"
