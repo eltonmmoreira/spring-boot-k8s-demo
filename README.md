@@ -44,7 +44,7 @@ https://kind.sigs.k8s.io/
 https://microk8s.io/  
 https://kubernetes.io/pt-br/docs/tutorials/hello-minikube/  
 
-Depois de fazer o build da aplicação e gerar a imagem docker, executar os arquivos do diretório k8s. 
+Após fazer o build da aplicação e gerar a imagem docker, criar no kubernetes os recursos do diretório k8s. 
 Criar primeiramente namespaces, redis, ingress e app.  
 Utilizado nginx como ingress.  
 
