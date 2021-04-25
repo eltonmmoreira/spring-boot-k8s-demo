@@ -45,6 +45,7 @@ public class QuoteApi {
                 log.info("Nenhuma cotação encontrada para o ticker [" + ticker + "]");
                 throw new QuoteNotFoundException(ticker);
             }
+            log.info("Retornando cotação do ticker [" + ticker + "]");
             return quoteResponse;
         } catch (Exception e) {
             throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, e.getMessage(), e);

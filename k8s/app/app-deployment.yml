@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: assets-app
-          image: eltonmmoreira/assets:0.0.1-SNAPSHOT
+          image: eltonmmoreira/assets:latest
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080
