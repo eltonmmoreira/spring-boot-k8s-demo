@@ -53,6 +53,12 @@ Comandos executados a partir de um diretório anterios aos arquivos yml, ex:
  - kubectl apply -f redis/
 
 # Documentation
-<pre><code>http://localhost:8080/api-docs
+<pre><code>Local
+http://localhost:8080/api-docs
 http://localhost:8080/swagger-ui.html
+
+K8s
+http://localhost/api/api-docs
+http://localhost/api/swagger-ui.html
+</code></pre>
 
